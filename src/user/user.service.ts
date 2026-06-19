@@ -26,7 +26,13 @@ export class UserService {
   // READ: akun
   async findAll() {
     return this.userRepository.find({
-      select: ['id', 'name', 'email', 'kelas', 'role'],
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        kelas: true,
+        role: true,
+      },
     });
   }
 }
